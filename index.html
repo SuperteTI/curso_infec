@@ -87,11 +87,12 @@
 </div>
 
 <script>
-var slideIndex = 1;
+var slideIndex = window.localStorage.getItem('slideIndex');
 showDivs(slideIndex);
 
 function plusDivs(n){
   showDivs(slideIndex += n);
+  window.localStorage.setItem('slideIndex',slideIndex);
 }
 function showDivs(n){
   var i;
