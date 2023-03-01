@@ -92,7 +92,11 @@ var slideIndex = 1;
 if(armazenar == null){
   slideIndex=1;
 }else{
-  slideIndex = parseInt(window.localStorage.getItem('slideIndex'));
+      if (confirm("Gostaria de iniciar do Inicio? ") == true) {
+            slideIndex=1;
+      }else{
+            slideIndex = parseInt(window.localStorage.getItem('slideIndex'));
+      }
 }
 
 function plusDivs(n){
