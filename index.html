@@ -95,7 +95,9 @@ function plusDivs(n){
   showDivs(slideIndex += n);
   window.localStorage.setItem('slideIndex',slideIndex);
 }
+console.log(slideIndex);
 function showDivs(n){
+    console.log(slideIndex);
     console.log(n);
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -109,6 +111,7 @@ function showDivs(n){
   x[slideIndex-1].style.display = "block";
   
 }
+    console.log(slideIndex);
 document.addEventListener('keydown', function(event) {
     const key = event.key;   
     switch (event.key) {
