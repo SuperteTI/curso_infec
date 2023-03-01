@@ -87,11 +87,13 @@
 </div>
 
 <script>
-var slideIndex = parseInt(window.localStorage.getItem('slideIndex'));
-if(slideIndex!=1){
- slideIndex = parseInt(window.localStorage.getItem('slideIndex'));
-}else{
+let armazenar = window.localStorage.getItem('slideIndex');
+console.log(armazenar);
+var slideIndex = 1;
+if(armazenar == null){
   slideIndex=1;
+}else{
+  slideIndex = parseInt(window.localStorage.getItem('slideIndex'));
 }
 
 function plusDivs(n){
