@@ -93,8 +93,7 @@ var slideIndex = 1;
 console.log(slideIndex);
 function plusDivs(n){
   showDivs(slideIndex += n);
-  window.localStorage.setItem('slideIndex',slideIndex);
-}
+ }
 console.log(slideIndex);
 function showDivs(n){
     console.log(slideIndex);
@@ -108,21 +107,11 @@ function showDivs(n){
   }
   
   console.log(slideIndex);
-  x[slideIndex].style.display = "block";
+  x[slideIndex-1].style.display = "block";
   
 }
     console.log(slideIndex);
-document.addEventListener('keydown', function(event) {
-    const key = event.key;   
-    switch (event.key) {
-      case "ArrowLeft":
-          plusDivs(-1);
-          break;
-      case "ArrowRight":
-          plusDivs(1);
-          break;
-     }
-});
+
 </script>
 </body>
 </html>
