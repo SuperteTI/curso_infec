@@ -14,6 +14,17 @@
   align-items: center;
 
 }
+.cont div{
+  position:absolute;
+    z-index:1;
+    top:55%;
+    text-align: center;
+    width:500px;               /* largura para o botão */
+    height:30px;              /* altura para o botão */
+    padding:0;
+    margin:-15px 0 0 -30px;   /* margem à esquerda e ao topo metade da medida do botão */
+    border:0 none;
+}
 .mySlides{
     width: 80%;
   position: absolute;
@@ -83,8 +94,11 @@
   <img class="mySlides" src="Img/c14ea237cfbae454cd36f4ad475fd41b-51.jpg">
   <img class="mySlides" src="Img/c14ea237cfbae454cd36f4ad475fd41b-52.jpg">
 
-  <button class="w3-button w3-display-left" onclick="plusDivs(-1)" style="width: 50px; height: 100vh; font-size: 50px;">&#10094;</button>
+  <button id="ant" class="w3-button w3-display-left" onclick="plusDivs(-1)" style="width: 50px; height: 100vh; font-size: 50px;">&#10094;</button>
   <button class="w3-button w3-display-right" onclick="plusDivs(1)" style="width: 50px; height: 100vh; font-size: 50px;">&#10095;</button>
+  
+  <div id="form"><a href="https://forms.gle/mvvSSCtq9xAQZtZF8"><button class="w3-button w3-round-xlarge w3-light-blue" >Formulario de Participação</button></a></div>
+
 </div>
 
 <script>
@@ -114,6 +128,7 @@ function plusDivs(n){
 function showDivs(n){
   let i;
   let x = document.getElementsByClassName("mySlides");
+  document.getElementById("form").style.display="none";
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
@@ -121,6 +136,13 @@ function showDivs(n){
   }
  
   x[slideIndex-1].style.display = "block";
+  document.getElementById("ant").style.display="block";
+  if(slideIndex==1){
+  document.getElementById("ant").style.display="none";
+  }
+  if(slideIndex==52){
+    document.getElementById("form").style.display="block";
+  }
   window.localStorage.setItem('slideIndex',slideIndex);
   console.log(slideIndex-1)
 }
